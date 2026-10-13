@@ -1,0 +1,32 @@
+{
+  "name": "dsh-auto-retry",
+  "version": "1.0.0",
+  "description": "Auto-retry unfinished agent turns in DeepSeek Harness: every 10 minutes sends 'continue' after API/network errors, up to 30 consecutive attempts per session. Skips fatal errors (insufficient_quota, invalid_api_key) and sessions that completed normally.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "bundle",
+    "auto-retry"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
